@@ -40,6 +40,7 @@ import notebook
 import nbformat
 import path_helpers as ph
 import pint
+import pymunk
 import matplotlib
 import platformio
 import teensy_minimal_rpc
@@ -181,6 +182,9 @@ def data_files():
     data_files_ += [('', list(walk_dll('mkl_*.dll')) +
                      list(walk_dll('MSVCP90.dll')) +
                      list(walk_dll('libiomp5md.dll')))]
+
+    # Add Chipmunk DLL.
+    data_files_ += [('', [pymunk.cp.chipmunk_lib._name])]
 
     # gtk theme
     runtime_path = ph.path(gtk.__file__).parent.parent.joinpath('gtk_runtime')
