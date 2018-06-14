@@ -181,17 +181,21 @@ def data_files():
                      list(icons_path.walkfiles())),
                     # Add wrapper to emulate running in a Conda environment.
                     (r'Scripts/wrappers/conda', ['run-in.bat']),
+                    # Make PlatformIO entry point wrapper to `pio-script.exe`
+                    (r'Scripts', ['pio.bat']),
                     ]
     return data_files_
 
 
+scripts_dir = ph.path(sys.prefix).joinpath('Scripts')
+
 runpy_file = os.path.join(os.path.split(runpy.__file__)[0], 'runpy.py')
-# microdrop_file = ph.path(microdrop.__file__).parent.joinpath('microdrop.py')
-microdrop_file = ph.path(whichcraft.which('microdrop')).parent.joinpath('microdrop-script.py')
-pip_file = ph.path(whichcraft.which('pip')).parent.joinpath('pip-script.py')
+microdrop_file = scripts_dir.joinpath('microdrop-script.py')
+pip_file = scripts_dir.joinpath('pip-script.py')
+pio_file = scripts_dir.joinpath('pio-script.py')
 
 setup(console=['jupyter-notebook.py', 'ipython.py', runpy_file] +
-      map(str, (microdrop_file, pip_file)),
+      map(str, (pip_file, pio_file, microdrop_file)),
       cmdclass={"py2exe": JsonSchemaCollector},
       # See http://www.py2exe.org/index.cgi/ListOfOptions
       options={'py2exe': {'unbuffered': True,
