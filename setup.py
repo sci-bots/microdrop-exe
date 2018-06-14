@@ -192,7 +192,10 @@ setup(console=['jupyter-notebook.py', 'ipython.py', runpy_file] +
       cmdclass={"py2exe": JsonSchemaCollector},
       # See http://www.py2exe.org/index.cgi/ListOfOptions
       options={'py2exe': {'unbuffered': True,
-                          'excludes': ['jinja2.asyncsupport'],
+                          'excludes': ['jinja2.asyncsupport',
+                                       'conda_helpers._async_py35',
+                                       'base_node_rpc._async_py36',
+                                       'asyncserial._asyncpy3'],
 # Work around 'api-ms-win-core-registry-l1-1-0.dll' not found:
 # https://stackoverflow.com/a/40090641/345236
 "dll_excludes": [
