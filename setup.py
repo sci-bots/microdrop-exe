@@ -41,6 +41,7 @@ import nbformat
 import path_helpers as ph
 import pint
 import matplotlib
+import platformio
 import teensy_minimal_rpc
 import zmq
 import whichcraft
@@ -162,6 +163,9 @@ def data_files():
                              (ph.path(nbformat.__path__[0]), tuple()),
                              (conda_prefix.joinpath('etc'), ('microdrop', )),
                              (conda_prefix.joinpath('etc'), ('conda', )),
+                             (platformio_share_dir.parent,
+                              (platformio_share_dir.name, )),
+                             (ph.path(platformio.__path__[0]), ('builder', )),
                              ):
         data_path = path_i.joinpath(*module_i)
 
