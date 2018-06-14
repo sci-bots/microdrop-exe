@@ -159,7 +159,9 @@ def data_files():
     # accessed within the zip file, so it also needs to be copied.
     for path_i, module_i in ((ph.path(notebook.__path__[0]), ('templates', )),
                              (ph.path(notebook.__path__[0]), ('static', )),
-                             (ph.path(nbformat.__path__[0]), tuple())):
+                             (ph.path(nbformat.__path__[0]), tuple()),
+                             (conda_prefix.joinpath('etc'), ('microdrop', )),
+                             ):
         data_path = path_i.joinpath(*module_i)
 
         # Copy the template files to the collection dir. Also add the copied
