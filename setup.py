@@ -161,6 +161,7 @@ def data_files():
                              (ph.path(notebook.__path__[0]), ('static', )),
                              (ph.path(nbformat.__path__[0]), tuple()),
                              (conda_prefix.joinpath('etc'), ('microdrop', )),
+                             (conda_prefix.joinpath('etc'), ('conda', )),
                              ):
         data_path = path_i.joinpath(*module_i)
 
