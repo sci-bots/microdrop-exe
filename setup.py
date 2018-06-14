@@ -188,9 +188,12 @@ def data_files():
                                     'gtkrc')
     engines_path = runtime_path.joinpath('lib', 'gtk-2.0', '2.10.0', 'engines')
     icons_path = runtime_path.joinpath('share', 'icons', 'hicolor')
+                    # Add GTK theme.
     data_files_ += [(r'etc/gtk-2.0', [rc_path]),
+                    # Add GTK runtime engines.
                     (runtime_path.relpathto(engines_path),
                      list(engines_path.files('*.dll'))),
+                    # Add GTK icons.
                     (runtime_path.relpathto(icons_path),
                      list(icons_path.walkfiles())),
                     # Add wrapper to emulate running in a Conda environment.
