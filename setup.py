@@ -29,6 +29,7 @@ import os
 import pkg_resources
 import runpy
 import site
+import sys
 
 from py2exe.build_exe import py2exe as build_exe
 import jsonschema
@@ -44,7 +45,11 @@ import zmq
 import whichcraft
 
 
+# Add MicroDrop plugins directory to import path.
 conda_prefix = ph.path(os.environ['CONDA_PREFIX'])
+microdrop_plugins_dir = conda_prefix.joinpath('etc', 'microdrop', 'plugins',
+                                              'enabled')
+sys.path.append(microdrop_plugins_dir)
 
 # PlatformIO shared files
 platformio_share_dir = conda_prefix.joinpath('share', 'platformio')
