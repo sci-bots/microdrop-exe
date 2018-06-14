@@ -53,7 +53,14 @@ def walk_dll(dll_name):
 site_packages = ph.path([p for p in site.getsitepackages()
                          if p.endswith('site-packages')][0])
 
-for p in (('pyutilib', ), ('pyutilib', 'component')):
+# `__init__.py` is missing for:
+#  - [`google` module in `google.protobuf`][1].
+#  - `ruamel` module in `ruamel.yaml`
+#  - `pyutilib`
+#
+# [1]: http://www.py2exe.org/index.cgi/GoogleProtobuf
+for p in (('pyutilib', ), ('pyutilib', 'component'), ('google', ),
+          ('ruamel',)):
     init_i = site_packages.joinpath(*(p + ('__init__.py', )))
     if not init_i.isfile():
         print 'Created missing `%s`.' % init_i
