@@ -26,6 +26,7 @@ except ImportError:
 from distutils.core import setup
 import itertools as it
 import os
+import pkg_resources
 import runpy
 import site
 
@@ -48,6 +49,16 @@ def walk_dll(dll_name):
         if p.isdir():
             for f in p.files(dll_name):
                 yield f
+
+
+def resource_modules(root_module):
+    return sorted(set(['.'.join((root_module, p.namebase))
+                       for p in map(ph.path,
+                                    pkg_resources
+                                    .resource_listdir(root_module, ''))
+                       if p.namebase != '__init__' and not
+                       pkg_resources.resource_isdir(root_module, p) and
+                       p.ext.startswith('.py')]))
 
 
 site_packages = ph.path([p for p in site.getsitepackages()
