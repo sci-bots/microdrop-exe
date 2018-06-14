@@ -190,6 +190,8 @@ def data_files():
                      list(icons_path.walkfiles())),
                     # Add wrapper to emulate running in a Conda environment.
                     (r'Scripts/wrappers/conda', ['run-in.bat']),
+                    # Set `PYTHONEXEPATH` to point to `python.exe`
+                    (r'etc/conda/activate.d', ['py2exe-python-emulation.bat']),
                     # Make PlatformIO entry point wrapper to `pio-script.exe`
                     (r'Scripts', ['pio.bat']),
                     ]
@@ -203,7 +205,7 @@ microdrop_file = scripts_dir.joinpath('microdrop-script.py')
 pip_file = scripts_dir.joinpath('pip-script.py')
 pio_file = scripts_dir.joinpath('pio-script.py')
 
-setup(console=['jupyter-notebook.py', 'ipython.py', runpy_file] +
+setup(console=['jupyter-notebook.py', 'python.py', 'ipython.py', runpy_file] +
       map(str, (pip_file, pio_file, microdrop_file)),
       cmdclass={"py2exe": JsonSchemaCollector},
       # See http://www.py2exe.org/index.cgi/ListOfOptions
