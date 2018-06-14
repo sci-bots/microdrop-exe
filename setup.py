@@ -43,6 +43,9 @@ import matplotlib
 import zmq
 import whichcraft
 
+
+conda_prefix = ph.path(os.environ['CONDA_PREFIX'])
+
 # PlatformIO shared files
 platformio_share_dir = conda_prefix.joinpath('share', 'platformio')
 
