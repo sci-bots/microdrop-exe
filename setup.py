@@ -41,6 +41,7 @@ import nbformat
 import path_helpers as ph
 import pint
 import matplotlib
+import teensy_minimal_rpc
 import zmq
 import whichcraft
 
@@ -107,7 +108,10 @@ class JsonSchemaCollector(build_exe):
                                  (ph.path(pint.__path__[0]),  # pint data files
                                   ('', )),
                                  (ph.path(microdrop.__path__[0]),  # microdrop glade files, icon
-                                  ('', ))):
+                                  ('', )),
+                                 (ph.path(teensy_minimal_rpc.__path__[0]),  # ADC configs CSV
+                                  ('', )),
+                                 ):
             data_path = path_i.joinpath(*module_i)
 
             # Copy the template files to the collection dir. Also add the copied
