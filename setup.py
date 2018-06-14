@@ -268,6 +268,28 @@ setup(console=['jupyter-notebook.py', 'python.py', 'ipython.py', runpy_file] +
                                        'pkg_resources._vendor.pyparsing',
                                        'pkg_resources._vendor.six',
 
+                                       'microdrop.microdrop',
+
+                                       # microdrop.dropbot_plugin
+                                       'dropbot_plugin',
+                                       'dropbot.node',
+                                       'google.protobuf.descriptor',
+                                       'ruamel.yaml',
+                                       'tables._comp_bzip2',
+                                       'tables.tests',
+                                       ] + resource_modules('platformio.commands') +
+                                       resource_modules('platformio.builder.tools') +
+                                       resource_modules('platformio.builder') + [
+
+                                       # SCons
+                                       'UserList',
+                                       'UserString',
+                                       'UserDict',
+
+                                       # microdrop.dmf_device_ui_plugin
+                                       'dmf_device_ui_plugin',
+
+                                       'trollius.selectors',
                                        'zmq',
                                        'zmq.utils',
                                        'zmq.utils.jsonapi',
