@@ -44,6 +44,7 @@ import matplotlib
 import teensy_minimal_rpc
 import zmq
 import whichcraft
+import IPython
 
 
 # Add MicroDrop plugins directory to import path.
@@ -111,6 +112,8 @@ class JsonSchemaCollector(build_exe):
                                   ('', )),
                                  (ph.path(teensy_minimal_rpc.__path__[0]),  # ADC configs CSV
                                   ('', )),
+                                 (ph.path(IPython.__path__[0]),  # IPython profile
+                                  ('core', 'profile', )),
                                  ):
             data_path = path_i.joinpath(*module_i)
 
