@@ -178,7 +178,10 @@ def data_files():
                     (runtime_path.relpathto(engines_path),
                      list(engines_path.files('*.dll'))),
                     (runtime_path.relpathto(icons_path),
-                     list(icons_path.walkfiles()))]
+                     list(icons_path.walkfiles())),
+                    # Add wrapper to emulate running in a Conda environment.
+                    (r'Scripts/wrappers/conda', ['run-in.bat']),
+                    ]
     return data_files_
 
 
