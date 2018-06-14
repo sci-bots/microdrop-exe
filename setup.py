@@ -43,6 +43,9 @@ import matplotlib
 import zmq
 import whichcraft
 
+# PlatformIO shared files
+platformio_share_dir = conda_prefix.joinpath('share', 'platformio')
+
 
 def walk_dll(dll_name):
     for p in [ph.path(p).expand() for p in os.environ['PATH'].split(';')]:
