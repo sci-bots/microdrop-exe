@@ -6,11 +6,6 @@ sys.path.insert(0, ph.path(sys.argv[0]).parent)
 
 # Required packages for `pkg_resources`
 import pkg_resources
-import appdirs
-import packaging
-import packaging.version
-import packaging.requirements
-import packaging.specifiers
 
 import path_helpers
 

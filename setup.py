@@ -262,6 +262,10 @@ setup(console=['jupyter-notebook.py', 'python.py', 'ipython.py', runpy_file] +
                                        'cycler', 'IPython',
                                        'cairo', 'gio', 'pango', 'pangocairo', 'atk',  # gtk
                                        'pyutilib.component.core', 'pyutilib.component.config', 'pyutilib.component.loader',  # pyutilib
+
+                                       ] + resource_modules('IPython') + [
+                                       'jupyter_core.__main__',
+
                                        # microdrop
                                        'lxml.etree',
                                        'lxml._elementpath',
