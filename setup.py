@@ -43,9 +43,9 @@ import pint
 import pymunk
 import matplotlib
 import platformio
+import pygtkhelpers
 import teensy_minimal_rpc
 import zmq
-import whichcraft
 import IPython
 
 
@@ -116,6 +116,8 @@ class JsonSchemaCollector(build_exe):
                                   ('', )),
                                  (ph.path(IPython.__path__[0]),  # IPython profile
                                   ('core', 'profile', )),
+                                 (ph.path(pygtkhelpers.__path__[0]),  # pygtkhelpers glade files
+                                  ('', )),
                                  ):
             data_path = path_i.joinpath(*module_i)
 
@@ -153,7 +155,10 @@ def data_files():
     # though* it is already automatically copied by `py2exe` to the name
     # `zmq.libzmq.pyd`.
     # data_files_ = [('', [ph.path(zmq.__path__[0]).joinpath('libzmq.pyd')])]
-    data_files_ = [('', ph.path(gst.__path__[0]).joinpath('bin').files('*.dll'))]
+    data_files_ = [('',
+                    ph.path(gst.__path__[0]).joinpath('bin').files('*.dll')),
+                   ('gst-plugins', ph.path(gst.__path__[0]).joinpath('plugins')
+                    .files('*.dll'))]
 
     # Jupyter notebook templates and static files cannot be accessed within the
     # zip file, so need to be copied.
@@ -206,6 +211,8 @@ def data_files():
                     (r'etc/conda/activate.d', ['py2exe-python-emulation.bat']),
                     # Make PlatformIO entry point wrapper to `pio-script.exe`
                     (r'Scripts', ['pio.bat']),
+                    # Set `GST_PLUGIN_PATH` to point to `gst-plugins`
+                    (r'etc/conda/activate.d', ['gst-plugins-path.bat']),
                     ]
     return data_files_
 
@@ -250,7 +257,12 @@ setup(console=['jupyter-notebook.py', 'python.py', 'ipython.py', runpy_file] +
 'WINNSI.DLL',
 'WINSTA.dll',
 'WTSAPI32.dll',
-],
+'MSVFW32.dll',
+'AVIFIL32.dll',
+'AVICAP32.dll',
+'ADVAPI32.dll',
+'CRYPT32.dll',
+'WLDAP32.dll'],
                           # 'dll_excludes': ['MSVFW32.dll',
                                            # 'AVIFIL32.dll',
                                            # 'AVICAP32.dll',
@@ -303,6 +315,8 @@ setup(console=['jupyter-notebook.py', 'python.py', 'ipython.py', runpy_file] +
 
                                        # microdrop.dmf_device_ui_plugin
                                        'dmf_device_ui_plugin',
+                                       'dmf_device_ui.bin.device_view',
+                                       'pygst_utils.video_view.video_source',
 
                                        'trollius.selectors',
                                        'zmq',
