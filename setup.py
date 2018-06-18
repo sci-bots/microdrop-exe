@@ -220,12 +220,18 @@ def data_files():
 scripts_dir = ph.path(sys.prefix).joinpath('Scripts')
 
 runpy_file = os.path.join(os.path.split(runpy.__file__)[0], 'runpy.py')
-microdrop_file = scripts_dir.joinpath('microdrop-script.py')
+dropbot_upload_file = ph.path('dropbot-upload-script.py')
+microdrop_config_file = scripts_dir.joinpath('microdrop-config-script.py')
 pip_file = scripts_dir.joinpath('pip-script.py')
-pio_file = scripts_dir.joinpath('pio-script.py')
+pio_file = ph.path('pio-script.py')
 
-setup(console=['jupyter-notebook.py', 'python.py', 'ipython.py', runpy_file] +
-      map(str, (pip_file, pio_file, microdrop_file)),
+setup(console=['jupyter-notebook.py', 'python.py', runpy_file,
+               {'script': 'microdrop-exe.py',
+                'dest_base': 'microdrop',
+                'icon_resources': [(0, ph.path(microdrop.__file__).parent
+                                    .joinpath('microdrop.ico'))]}] +
+      [{'script': f, 'dest_base': f.namebase.rstrip('-script')}
+       for f in (pio_file, dropbot_upload_file, microdrop_config_file)],
       cmdclass={'py2exe': JsonSchemaCollector},
       # See http://www.py2exe.org/index.cgi/ListOfOptions
       options={'py2exe': {'unbuffered': True,
