@@ -12,8 +12,8 @@ try:
         import modulefinder
     import win32com, sys
     for p in win32com.__path__[1:]:
-        modulefinder.AddPackagePath("win32com", p)
-    for extra in ["win32com.shell"]: #,"win32com.mapi"
+        modulefinder.AddPackagePath('win32com', p)
+    for extra in ['win32com.shell']: #,'win32com.mapi'
         __import__(extra)
         m = sys.modules[extra]
         for p in m.__path__[1:]:
@@ -94,10 +94,10 @@ for p in (('pyutilib', ), ('pyutilib', 'component'), ('google', ),
 
 
 class JsonSchemaCollector(build_exe):
-    """
+    '''
     This class Adds jsonschema files draft3.json and draft4.json to
     the list of compiled files so it will be included in the zipfile.
-    """
+    '''
     def copy_extensions(self, extensions):
         build_exe.copy_extensions(self, extensions)
         collect_dir = ph.path(self.collect_dir)
@@ -138,7 +138,7 @@ class JsonSchemaCollector(build_exe):
 
 # libzmq.dll is in same directory as zmq's __init__.py
 
-os.environ["PATH"] += (os.path.pathsep +
+os.environ['PATH'] += (os.path.pathsep +
                        os.path.pathsep.join([os.path.split(zmq.__file__)[0],
                                              # GStreamer DLLs
                                              ph.path(gst.__file__).parent
@@ -226,7 +226,7 @@ pio_file = scripts_dir.joinpath('pio-script.py')
 
 setup(console=['jupyter-notebook.py', 'python.py', 'ipython.py', runpy_file] +
       map(str, (pip_file, pio_file, microdrop_file)),
-      cmdclass={"py2exe": JsonSchemaCollector},
+      cmdclass={'py2exe': JsonSchemaCollector},
       # See http://www.py2exe.org/index.cgi/ListOfOptions
       options={'py2exe': {'unbuffered': True,
                           'excludes': ['jinja2.asyncsupport',
@@ -235,7 +235,7 @@ setup(console=['jupyter-notebook.py', 'python.py', 'ipython.py', runpy_file] +
                                        'asyncserial._asyncpy3'],
 # Work around 'api-ms-win-core-registry-l1-1-0.dll' not found:
 # https://stackoverflow.com/a/40090641/345236
-"dll_excludes": [
+'dll_excludes': [
 'ADVAPI32.dll',
 'CFGMGR32.dll',
 'CRYPT32.dll',
