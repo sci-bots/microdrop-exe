@@ -205,6 +205,8 @@ def data_files():
                     # Add GTK icons.
                     (runtime_path.relpathto(icons_path),
                      list(icons_path.walkfiles())),
+                    # Add post-install script and README.
+                    (r'', ['post-install.bat', 'README.md']),
                     # Add wrapper to emulate running in a Conda environment.
                     (r'Scripts/wrappers/conda', ['run-in.bat']),
                     # Set `PYTHONEXEPATH` to point to `python.exe`
