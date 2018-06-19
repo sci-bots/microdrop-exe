@@ -228,10 +228,28 @@ microdrop_config_file = scripts_dir.joinpath('microdrop-config-script.py')
 pip_file = scripts_dir.joinpath('pip-script.py')
 pio_file = build_scripts_dir.joinpath('pio-script.py')
 
-setup(console=[str(build_scripts_dir.joinpath('jupyter-notebook.py')),
+setup(# Package MicroDrop executable as a *Windows* application (as opposed to
+      # a *console* application).  This is necessary to assign an icon to the
+      # `.exe` file.
+      windows=[{'script': build_scripts_dir.joinpath('microdrop-exe.py'),
+                'dest_base': 'MicroDrop',
+                'icon_resources': [(0, ph.path(microdrop.__file__).parent
+                                    .joinpath('microdrop.ico'))]}],
+      console=[str(build_scripts_dir.joinpath('jupyter-notebook.py')),
                str(build_scripts_dir.joinpath('python.py')), runpy_file,
+               # Package alternate MicroDrop executable to launch from console.
+               # This may be helpful, for example, during debugging, since
+               # `stdout` and `stderr` are written to the output of the console
+               # where MicroDrop was launched from.  In contrast, the MicroDrop
+               # Windows executable (with the graphical icon) *launches a
+               # **new** console*.
                {'script': build_scripts_dir.joinpath('microdrop-exe.py'),
-                'dest_base': 'microdrop',
+                'dest_base': 'microdrop-console',
+                # XXX Need to include `icon_resources` otherwise icon is also
+                # missing from `windows` executable above.  This seems like it
+                # must have something to do with the two scripts sharing the
+                # same source, where the Windows app manifest does not seem to
+                # be written correctly.
                 'icon_resources': [(0, ph.path(microdrop.__file__).parent
                                     .joinpath('microdrop.ico'))]}] +
       [{'script': f, 'dest_base': f.namebase.rstrip('-script')}
