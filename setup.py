@@ -57,7 +57,7 @@ sys.path.append(microdrop_plugins_dir)
 
 # PlatformIO shared files
 platformio_share_dir = conda_prefix.joinpath('share', 'platformio')
-build_scripts_dir = ph.path('Scripts')
+build_scripts_dir = ph.path('src').joinpath('Scripts')
 
 
 def walk_dll(dll_name):
