@@ -57,7 +57,8 @@ sys.path.append(microdrop_plugins_dir)
 
 # PlatformIO shared files
 platformio_share_dir = conda_prefix.joinpath('share', 'platformio')
-build_scripts_dir = ph.path('src').joinpath('Scripts')
+build_src_dir = ph.path('src')
+build_scripts_dir = build_src_dir.joinpath('Scripts')
 
 
 def walk_dll(dll_name):
@@ -208,7 +209,7 @@ def data_files():
                      list(icons_path.walkfiles())),
                     # Add post-install script and README.
                     (r'', [build_scripts_dir.joinpath('post-install.bat'),
-                           'README.md']),
+                           build_src_dir.joinpath('README.md')]),
                     # Add wrapper to emulate running in a Conda environment.
                     (r'Scripts/wrappers/conda',
                      [build_scripts_dir.joinpath('run-in.bat')]),
