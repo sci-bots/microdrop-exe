@@ -19,9 +19,14 @@ if __name__ == "__main__":
 
     multiprocessing.freeze_support()
 
-    if len(sys.argv) < 2:
+    if '-h' in sys.argv:
         print >> sys.stderr, "Usage: python {-m <module> | <script filepath>} [arg [arg ...]]"
         sys.exit(-1)
+    elif len(sys.argv) < 2:
+        # No script or module was specified. Emulate console using IPython.
+        import IPython
+        IPython.embed()
+        sys.exit()
     elif sys.argv[1] == '-m':
         # Emulate `python -m <module>`.
         del sys.argv[:2] # Make the requested module sys.argv[0]
