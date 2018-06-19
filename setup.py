@@ -257,6 +257,7 @@ setup(# Package MicroDrop executable as a *Windows* application (as opposed to
       cmdclass={'py2exe': JsonSchemaCollector},
       # See http://www.py2exe.org/index.cgi/ListOfOptions
       options={'py2exe': {'unbuffered': True,
+                          'compressed': True,
                           'excludes': ['jinja2.asyncsupport',
                                        'conda_helpers._async_py35',
                                        'base_node_rpc._async_py36',
