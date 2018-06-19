@@ -220,15 +220,17 @@ def data_files():
 
 
 scripts_dir = ph.path(sys.prefix).joinpath('Scripts')
+build_scripts_dir = ph.path('Scripts')
 
 runpy_file = os.path.join(os.path.split(runpy.__file__)[0], 'runpy.py')
-dropbot_upload_file = ph.path('dropbot-upload-script.py')
+dropbot_upload_file = build_scripts_dir.joinpath('dropbot-upload-script.py')
 microdrop_config_file = scripts_dir.joinpath('microdrop-config-script.py')
 pip_file = scripts_dir.joinpath('pip-script.py')
-pio_file = ph.path('pio-script.py')
+pio_file = build_scripts_dir.joinpath('pio-script.py')
 
-setup(console=['jupyter-notebook.py', 'python.py', runpy_file,
-               {'script': 'microdrop-exe.py',
+setup(console=[str(build_scripts_dir.joinpath('jupyter-notebook.py')),
+               str(build_scripts_dir.joinpath('python.py')), runpy_file,
+               {'script': build_scripts_dir.joinpath('microdrop-exe.py'),
                 'dest_base': 'microdrop',
                 'icon_resources': [(0, ph.path(microdrop.__file__).parent
                                     .joinpath('microdrop.ico'))]}] +
