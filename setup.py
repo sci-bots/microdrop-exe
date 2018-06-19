@@ -57,6 +57,7 @@ sys.path.append(microdrop_plugins_dir)
 
 # PlatformIO shared files
 platformio_share_dir = conda_prefix.joinpath('share', 'platformio')
+build_scripts_dir = ph.path('Scripts')
 
 
 def walk_dll(dll_name):
@@ -206,21 +207,23 @@ def data_files():
                     (runtime_path.relpathto(icons_path),
                      list(icons_path.walkfiles())),
                     # Add post-install script and README.
-                    (r'', ['post-install.bat', 'README.md']),
+                    (r'', [build_scripts_dir.joinpath('post-install.bat'),
+                           'README.md']),
                     # Add wrapper to emulate running in a Conda environment.
-                    (r'Scripts/wrappers/conda', ['run-in.bat']),
+                    (r'Scripts/wrappers/conda',
+                     [build_scripts_dir.joinpath('run-in.bat')]),
                     # Set `PYTHONEXEPATH` to point to `python.exe`
-                    (r'etc/conda/activate.d', ['py2exe-python-emulation.bat']),
+                    (r'etc/conda/activate.d',
+                     [build_scripts_dir.joinpath('py2exe-python-emulation.bat')]),
                     # Make PlatformIO entry point wrapper to `pio-script.exe`
-                    (r'Scripts', ['pio.bat']),
+                    (r'Scripts', [build_scripts_dir.joinpath('pio.bat')]),
                     # Set `GST_PLUGIN_PATH` to point to `gst-plugins`
-                    (r'etc/conda/activate.d', ['gst-plugins-path.bat']),
-                    ]
+                    (r'etc/conda/activate.d',
+                     [build_scripts_dir.joinpath('gst-plugins-path.bat')])]
     return data_files_
 
 
 scripts_dir = ph.path(sys.prefix).joinpath('Scripts')
-build_scripts_dir = ph.path('Scripts')
 
 runpy_file = os.path.join(os.path.split(runpy.__file__)[0], 'runpy.py')
 dropbot_upload_file = build_scripts_dir.joinpath('dropbot-upload-script.py')
