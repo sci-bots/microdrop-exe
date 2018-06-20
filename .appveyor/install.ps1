@@ -27,4 +27,4 @@ conda install 7za -y -c conda-forge
 
 # Download 7zip installer and extract _self-extracting (SFX)_ plugins.
 cmd /C curl -L --output 7zip-installer.exe https://www.7-zip.org/a/7z1805.exe
-7za x "-ir!*.sfx" ..\7zip-installer.exe
+7za x "-ir!*.sfx" 7zip-installer.exe
