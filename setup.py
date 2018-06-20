@@ -32,21 +32,21 @@ import site
 import sys
 
 from py2exe.build_exe import py2exe as build_exe
-import jsonschema
-import microdrop
+import IPython
 import gst
 import gtk
-import notebook
+import jsonschema
+import matplotlib
+import microdrop
 import nbformat
+import notebook
 import path_helpers as ph
 import pint
-import pymunk
-import matplotlib
 import platformio
 import pygtkhelpers
+import pymunk
 import teensy_minimal_rpc
 import zmq
-import IPython
 
 
 # Add MicroDrop plugins directory to import path.
