@@ -1,0 +1,43 @@
+version: 1.0.{build}
+skip_non_tags: true
+image: Visual Studio 2015
+init:
+- ps: >-
+    # Batch file for AppVeyor install step
+
+    # Requires MINICONDA and PROJECT_NAME environment variables
+
+    Write-Host $env:PYTHON_VERSION $env:MINICONDA
+
+
+    # Add Conda to path
+
+    $env:PATH = $env:MINICONDA + ";" + $env:PATH;
+
+    $env:PATH = $env:MINICONDA + "\\Scripts;" + $env:PATH;
+
+    Write-Host $env:PATH
+environment:
+  anaconda_token:
+    secure: ZpLQ+IMirVuHrEkZPevDFTZ4AeUuDtLm5d4KTCwgI5oIB5eJxP5OLDYFKwud7K89
+  matrix:
+  - PYTHON_VERSION: 2.7
+    MINICONDA: C:\Miniconda
+    PYTHON_ARCH: 32
+    ARCH: Win32
+install:
+- ps: .appveyor/install.ps1
+build_script:
+- ps: .appveyor/build.ps1
+test: off
+artifacts:
+- path: artifacts\*.exe
+  name: SelfExtractArchive
+deploy:
+- provider: GitHub
+  auth_token:
+    secure: C074QekpYhiild2fkSkPwAsfsFiLWvxxhJHe5tLY8qkczOmwZ163W40g5/6oFyr0
+  artifact: SelfExtractArchive
+  force_update: true
+  on:
+    APPVEYOR_REPO_TAG: true
