@@ -12,8 +12,6 @@ Update-AppveyorBuild -Version $buildTag
 
 activate.ps1 $env:APPVEYOR_PROJECT_NAME
 
-conda env create --file environment-template.yaml
-
 # Link all available plugins to enabled directory
 python -m mpm.bin.api enable $(dir $env:CONDA_PREFIX\share\microdrop\plugins\available)
 

@@ -18,7 +18,6 @@ conda install -n root -c pscondaenvs pscondaenvs
 
 # Update conda, and install conda-build (used for building in non-root env)
 conda update -q conda
-conda install --yes conda-build anaconda-client nose
 
 # Create new project environment
 conda env create --name $env:APPVEYOR_PROJECT_NAME --file environment.yaml
