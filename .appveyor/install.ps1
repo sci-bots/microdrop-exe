@@ -21,7 +21,7 @@ conda update -q conda
 conda install --yes conda-build anaconda-client nose
 
 # Create new project environment
-conda env create --name $env:APPVEYOR_PROJECT_NAME environment.yaml
+conda env create --name $env:APPVEYOR_PROJECT_NAME --file environment.yaml
 
 activate.ps1 $env:APPVEYOR_PROJECT_NAME
 conda install 7za -y -c conda-forge

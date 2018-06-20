@@ -25,7 +25,7 @@ $dist_dir = "microdrop-$($x.Substring(1))"
 mv dist $dist_dir
 
 # Create self-extracting 7zip archive
-7za a -sfx"7z.sfx" -r "$dist_dir.7z" $dist_dir
+7za a -bd -sfx"7z.sfx" -r "$dist_dir.7z" $dist_dir
 
 # Prepend platform (i.e., `win-32`, `win-64`, `noarch`) to each package filename
 # and collect package files in `artifacts` directory.
