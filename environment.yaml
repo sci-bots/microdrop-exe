@@ -258,7 +258,7 @@ dependencies:
   - run-exe=0.5.post2=0
   - svgwrite=1.1.8=0
   - task-scheduler=0.2=0
-  - wheeler.pygtkhelpers=0.21=0
+  - wheeler.pygtkhelpers=0.21.1=0
   - microdrop.dmf-device-ui-plugin=2.6=0
   - microdrop.dropbot-plugin=2.23=0
   - microdrop.droplet-planning-plugin=2.3.1=0
