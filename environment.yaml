@@ -190,8 +190,8 @@ dependencies:
   - clang-helpers=0.7=py_0
   - click=5.1.0=py_0
   - conda-helpers=0.21=0
-  - dropbot=1.50.1=py_0
-  - dropbot-dev=1.50.1=0
+  - dropbot=1.51.2=py_0
+  - dropbot-dev=1.51.2=0
   - hv-switching-board=0.10.0=py27_0
   - json-tricks=3.11.3=py_0
   - logging-helpers=0.3=py_0
@@ -260,7 +260,7 @@ dependencies:
   - task-scheduler=0.2=0
   - wheeler.pygtkhelpers=0.21.1=0
   - microdrop.dmf-device-ui-plugin=2.7=0
-  - microdrop.dropbot-plugin=2.23=0
+  - microdrop.dropbot-plugin=2.25.1=0
   - microdrop.droplet-planning-plugin=2.3.1=0
   - microdrop.step-label-plugin=2.2.2=0
   - microdrop.user-prompt-plugin=2.3.1=0
