@@ -1,3 +1,11 @@
+# microdrop-exe
+
+[![Build status](https://ci.appveyor.com/api/projects/status/pjxh5g91jpbh7t84?svg=true)](https://ci.appveyor.com/project/SciBots/microdrop-exe)
+  
+[![Build history](https://buildstats.info/appveyor/chart/SciBots/microdrop-exe)](https://ci.appveyor.com/project/SciBots/microdrop-exe/history)
+
+------------------------------------------------------------------------
+
 This project defines a [`py2exe`][py2exe] configuration for packaging MicroDrop
 2 as a Windows application (no need for external Python/Conda environment).
 
