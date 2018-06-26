@@ -291,7 +291,7 @@ setup(# Package MicroDrop executable as a *Windows* application (as opposed to
        for f in (pio_file, dropbot_upload_file, microdrop_config_file)],
       cmdclass={'py2exe': JsonSchemaCollector},
       # See http://www.py2exe.org/index.cgi/ListOfOptions
-      options={'py2exe': {'unbuffered': True,
+      options={'py2exe': {'unbuffered': False,
                           'compressed': True,
                           # Insert MICRODROP_PYTHONPATH paths into sys.path
                           'custom_boot_script': 'custom_boot_script.py',
