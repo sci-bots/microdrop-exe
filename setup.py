@@ -292,7 +292,8 @@ setup(# Package MicroDrop executable as a *Windows* application (as opposed to
       cmdclass={'py2exe': JsonSchemaCollector},
       # See http://www.py2exe.org/index.cgi/ListOfOptions
       options={'py2exe': {'unbuffered': False,
-                          'compressed': True,
+                          'compressed': False,
+                          'skip_archive': True,
                           # Insert MICRODROP_PYTHONPATH paths into sys.path
                           'custom_boot_script': 'custom_boot_script.py',
                           'excludes': ['jinja2.asyncsupport',
