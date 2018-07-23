@@ -58,8 +58,8 @@ dependencies:
   - decorator=4.3.0=py_0
   - dmf-device-ui=0.11.3=0
   - docutils=0.14=py27_0
-  - dropbot-dev=1.51.3=0
-  - dropbot=1.51.3=py_0
+  - dropbot-dev=1.61=0
+  - dropbot=1.61=py_0
   - droplet-planning=0.2.post1=0
   - entrypoints=0.2.3=py27_1
   - enum34=1.1.6=py27_1
