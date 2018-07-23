@@ -249,6 +249,8 @@ def data_files():
                      [build_scripts_dir.joinpath('py2exe-python-emulation.bat')]),
                     # Make PlatformIO entry point wrapper to `pio-script.exe`
                     (r'Scripts', [build_scripts_dir.joinpath('pio.bat')]),
+                    # Copy pandoc to build.
+                    (r'Scripts', [scripts_dir.joinpath('pandoc.exe')]),
                     # Set `GST_PLUGIN_PATH` to point to `gst-plugins`
                     (r'etc/conda/activate.d',
                      [build_scripts_dir.joinpath('gst-plugins-path.bat')])]
