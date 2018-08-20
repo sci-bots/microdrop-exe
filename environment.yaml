@@ -29,9 +29,10 @@ dependencies:
   - backports=1.0=py27_1
   - backports_abc=0.5=py27_0
   - base-node-dev=0.14=0
-  - base-node-rpc-dev=0.49=0
-  - base-node-rpc=0.49=0
+  - base-node-rpc-dev=0.51.1=0
+  - base-node-rpc=0.51.1=0
   - base-node=0.14=py_0
+  - beautifulsoup4=4.6.0=py27_0
   - bleach=2.1.3=py_0
   - blinker=1.4=py_1
   - blosc=1.14.3=h95ae18b_0
@@ -56,10 +57,10 @@ dependencies:
   - cycler=0.10=1
   - debounce=0.2=0
   - decorator=4.3.0=py_0
-  - dmf-device-ui=0.11.3=0
+  - dmf-device-ui=0.13=0
   - docutils=0.14=py27_0
-  - dropbot-dev=1.61=0
-  - dropbot=1.61=py_0
+  - dropbot-dev=1.65=0
+  - dropbot=1.65=py_0
   - droplet-planning=0.2.post1=0
   - entrypoints=0.2.3=py27_1
   - enum34=1.1.6=py27_1
@@ -103,7 +104,7 @@ dependencies:
   - libprotobuf=3.5.2=vc9_0
   - libsodium=1.0.16=vc9_0
   - lockfile=0.12.2=py27_0
-  - logging-helpers=0.3=py_0
+  - logging-helpers=0.4=py_0
   - lxml=4.1.1.post1=0
   - m2w64-gcc-libgfortran=5.3.0=6
   - m2w64-gcc-libs-core=5.3.0=7
@@ -116,12 +117,12 @@ dependencies:
   - microdrop-plugin-manager=0.25.1=0
   - microdrop-plugin-template=1.3=0
   - microdrop-utility=0.4.post2=0
-  - microdrop.dmf-device-ui-plugin=2.7.1=0
-  - microdrop.dropbot-plugin=2.26=0
-  - microdrop.droplet-planning-plugin=2.3.1=0
+  - microdrop.dmf-device-ui-plugin=2.9=0
+  - microdrop.dropbot-plugin=2.34=0
+  - microdrop.droplet-planning-plugin=2.5.1=0
   - microdrop.step-label-plugin=2.2.2=0
   - microdrop.user-prompt-plugin=2.3.1=0
-  - microdrop=2.22.4=0
+  - microdrop=2.25.2=0
   - mistune=0.8.3=py_0
   - mkl=2017.0.1=0
   - more-itertools=4.2.0=py_0
@@ -141,7 +142,7 @@ dependencies:
   - notebook=5.4.1=py27_0
   - ntfsutils=0.1.3.post2=1
   - numexpr=2.6.4=py27_1
-  - numpy=1.11.3=py27hfef472a_4
+  - numpy=1.11.3=py27_0
   - onoff=1.0.1=py_0
   - opencv-helpers=0.1.post1=0
   - openpyxl=2.5.3=py27_0
@@ -252,7 +253,7 @@ dependencies:
   - wcwidth=0.1.7=py27_0
   - webencodings=0.5.1=py27_0
   - wheel=0.31.0=py27_0
-  - wheeler.pygtkhelpers=0.21.1=0
+  - wheeler.pygtkhelpers=0.22=0
   - wheezy.routing=0.1.157=py_0
   - whichcraft=0.4.1=py27_0
   - widgetsnbextension=3.2.1=py27_0
@@ -263,6 +264,6 @@ dependencies:
   - yaml=0.1.7=vc9_0
   - zeromq=4.2.5=vc9_1
   - zlib=1.2.11=vc9_0
-  - zmq-plugin=0.3=0
+  - zmq-plugin=0.4=0
   - pip:
     - http://nchc.dl.sourceforge.net/project/py2exe/py2exe/0.6.9/py2exe-0.6.9.zip
