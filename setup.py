@@ -295,7 +295,7 @@ setup(# Package MicroDrop executable as a *Windows* application (as opposed to
       # See http://www.py2exe.org/index.cgi/ListOfOptions
       options={'py2exe': {'unbuffered': False,
                           'compressed': False,
-                          'skip_archive': True,
+                          'skip_archive': False,
                           # Insert MICRODROP_PYTHONPATH paths into sys.path
                           'custom_boot_script': 'custom_boot_script.py',
                           'excludes': ['jinja2.asyncsupport',
