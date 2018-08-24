@@ -34,6 +34,7 @@ import sys
 
 from py2exe.build_exe import py2exe as build_exe
 import IPython
+import dropbot
 import gst
 import gtk
 import jsonschema
@@ -151,6 +152,10 @@ class JsonSchemaCollector(build_exe):
                                   ('core', 'profile', )),
                                  (ph.path(pygtkhelpers.__path__[0]),  # pygtkhelpers glade files
                                   ('', )),
+                                 (ph.path(dropbot.__path__[0]),  # DropBot static files
+                                  ('static', )),
+                                 (ph.path(dropbot.__path__[0]),  # DropBot notebooks
+                                  ('notebooks', )),
                                  ):
             data_path = path_i.joinpath(*module_i)
 
