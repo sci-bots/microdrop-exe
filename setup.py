@@ -295,6 +295,7 @@ setup(# Package MicroDrop executable as a *Windows* application (as opposed to
       # See http://www.py2exe.org/index.cgi/ListOfOptions
       options={'py2exe': {'unbuffered': False,
                           'compressed': False,
+                          'packages': ['dropbot'],
                           'skip_archive': False,
                           # Insert MICRODROP_PYTHONPATH paths into sys.path
                           'custom_boot_script': 'custom_boot_script.py',
@@ -368,7 +369,6 @@ setup(# Package MicroDrop executable as a *Windows* application (as opposed to
 
                                        # microdrop.dropbot_plugin
                                        'dropbot_plugin',
-                                       'dropbot.node',
                                        'google.protobuf.descriptor',
                                        'ruamel.yaml',
                                        'tables._comp_bzip2',
