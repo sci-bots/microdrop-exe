@@ -184,7 +184,7 @@ dependencies:
   - pyglib2=0.1.0=py27_1
   - pygments=2.2.0=py27_0
   - pygst-0.10=0.1.post2=0
-  - pygst_utils=0.3.4=1
+  - pygst_utils=0.3.5=1
   - pygtk-textbuffer-with-undo=0.2=0
   - pygtk2=0.1.0=py27_3
   - pymunk=4.0.0=0
