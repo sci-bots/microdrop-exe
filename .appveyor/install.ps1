@@ -21,6 +21,7 @@ conda update -q conda
 
 # Create new project environment
 conda env create --name $env:APPVEYOR_PROJECT_NAME --file environment.yaml
+if ($LASTEXITCODE) { throw "Failed to create build Conda environment." }
 
 activate.ps1 $env:APPVEYOR_PROJECT_NAME
 conda install 7za -y -c conda-forge
@@ -28,3 +29,4 @@ conda install 7za -y -c conda-forge
 # Download 7zip installer and extract _self-extracting (SFX)_ plugins.
 cmd /C curl -L --output 7zip-installer.exe https://www.7-zip.org/a/7z1805.exe
 7za x "-ir!*.sfx" 7zip-installer.exe
+if ($LASTEXITCODE) { throw "Failed to extract 7zip self-extracting executable module" }

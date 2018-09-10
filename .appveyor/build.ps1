@@ -29,3 +29,4 @@ mv dist $dist_dir
 # and collect package files in `artifacts` directory.
 md artifacts
 mv "$dist_dir.exe" artifacts
+if (-Not $?) { throw "Build output `$dist_dir.exe` not found." }
