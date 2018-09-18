@@ -21,6 +21,7 @@ dependencies:
   - arrow=0.12.1=py27_1
   - asn1crypto=0.24.0=py27_0
   - asyncserial=0.2.3=py_0+git8b4b71e
+  - asyncio-helpers=0.2.1=0
   - attrs=18.1.0=py_1
   - babel=2.5.3=py27_0
   - backports.functools_lru_cache=1.5=py27_0
@@ -57,7 +58,7 @@ dependencies:
   - cycler=0.10=1
   - debounce=0.2=0
   - decorator=4.3.0=py_0
-  - dmf-device-ui=0.14=0
+  - dmf-device-ui=0.15=0
   - docutils=0.14=py27_0
   - dropbot-dev=1.66.1=0
   - dropbot=1.66.1=py_0
@@ -111,18 +112,19 @@ dependencies:
   - m2w64-gcc-libs=5.3.0=7
   - m2w64-gmp=6.1.0=2
   - m2w64-libwinpthread-git=5.0.0.4634.697f757=2
+  - markdown2pango=0.1=0
   - markupsafe=1.0=py27_0
   - matplotlib=2.0.2=np111py27_gtk2_3
   - microdrop-device-converter=0.1.post5=0
-  - microdrop-plugin-manager=0.25.1=0
+  - microdrop-plugin-manager=0.25.2=0
   - microdrop-plugin-template=1.3=0
   - microdrop-utility=0.4.post2=0
-  - microdrop.dmf-device-ui-plugin=2.11=0
-  - microdrop.dropbot-plugin=2.36.1=0
-  - microdrop.droplet-planning-plugin=2.5.3=0
+  - microdrop.dmf-device-ui-plugin=2.12=0
+  - microdrop.dropbot-plugin=2.37=0
+  - microdrop.droplet-planning-plugin=2.6.1=0
   - microdrop.step-label-plugin=2.2.2=0
-  - microdrop.user-prompt-plugin=2.3.2=0
-  - microdrop=2.28.3=0
+  - microdrop.user-prompt-plugin=2.4=0
+  - microdrop=2.30=0
   - mistune=0.8.3=py_0
   - mkl=2017.0.1=0
   - more-itertools=4.2.0=py_0
