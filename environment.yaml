@@ -121,7 +121,7 @@ dependencies:
   - microdrop-utility=0.4.post2=0
   - microdrop.dmf-device-ui-plugin=2.12=0
   - microdrop.dropbot-plugin=2.37.1=0
-  - microdrop.droplet-planning-plugin=2.6.1=0
+  - microdrop.droplet-planning-plugin=2.6.2=0
   - microdrop.step-label-plugin=2.2.2=0
   - microdrop.user-prompt-plugin=2.4=0
   - microdrop=2.30=0
