@@ -345,6 +345,7 @@ setup(# Package MicroDrop executable as a *Windows* application (as opposed to
                                            # 'CRYPT32.dll',
                                            # 'WLDAP32.dll'],
                           'includes': ['matplotlib', 'numpy', 'pandas',
+                                       'matplotlib.backends.backend_gtkagg',
                                        'matplotlib.backends.backend_wxagg',
                                        'cycler', 'IPython',
                                        'cairo', 'gio', 'pango', 'pangocairo', 'atk',  # gtk
