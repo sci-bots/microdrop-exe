@@ -124,7 +124,7 @@ dependencies:
   - microdrop.droplet-planning-plugin=2.6.2=0
   - microdrop.step-label-plugin=2.2.2=0
   - microdrop.user-prompt-plugin=2.4=0
-  - microdrop=2.30=0
+  - microdrop=2.32=0
   - mistune=0.8.3=py_0
   - mkl=2017.0.1=0
   - more-itertools=4.2.0=py_0
