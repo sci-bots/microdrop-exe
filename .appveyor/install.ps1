@@ -20,12 +20,16 @@ conda install -n root -c pscondaenvs pscondaenvs
 conda update -q conda
 
 # Create new project environment
-echo "APPVEYOR_PROJECT_NAME=$env:APPVEYOR_PROJECT_NAME"
-conda env create --file environment.yaml
+conda env create -n microdrop-exe --file environment.yaml
 if ($LASTEXITCODE) { throw "Failed to create build Conda environment." }
 
-activate.ps1
-activate.ps1 microdrop-exe
+conda info --envs
+
+activate
+activate microdrop-exe
+
+conda info --envs
+
 conda install 7za -y -c conda-forge
 
 # Download 7zip installer and extract _self-extracting (SFX)_ plugins.
