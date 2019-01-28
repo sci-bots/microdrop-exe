@@ -1,6 +1,7 @@
 name: microdrop-exe-2.22.4
 channels:
   - dropbot
+  - sci-bots/label/py2exe
   - sci-bots/label/microdrop-2-plugins
   - sci-bots/label/microdrop-2
   - sci-bots
@@ -179,6 +180,7 @@ dependencies:
   - prompt_toolkit=1.0.15=py27_0
   - protobuf=3.5.2=py27_vc9_0
   - psutil=5.4.5=py27_0
+  - py2exe=0.6.9=py27
   - py=1.5.3=py_0
   - pycairo-gtk2=0.1.0=py27_1
   - pycparser=2.18=py27_0
@@ -268,5 +270,3 @@ dependencies:
   - zeromq=4.2.5=vc9_1
   - zlib=1.2.11=vc9_0
   - zmq-plugin=0.4=0
-  - pip:
-    - http://nchc.dl.sourceforge.net/project/py2exe/py2exe/0.6.9/py2exe-0.6.9.zip
