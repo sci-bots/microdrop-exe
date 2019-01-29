@@ -4,6 +4,14 @@ Set-ExecutionPolicy RemoteSigned
 # Configure Conda to operate without user input
 conda config --set always_yes yes --set changeps1 no
 
+# Update conda, and install conda-build (used for building in non-root env)
+conda update -q conda
+
+# Initialize Conda Powershell support.
+conda init powershell
+# Reload Powershell profile (simulates restart of shell after init).
+~\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
+
 # Allow extra Conda channels to be added (e.g., for testing).
 if ($env:CONDA_EXTRA_CHANNELS) {
     $env:CONDA_EXTRA_CHANNELS.Split(";") | ForEach {
@@ -12,25 +20,13 @@ if ($env:CONDA_EXTRA_CHANNELS) {
     }
 }
 
-
-# Use PSCondaEnvs to allow activation using powershell:
-conda install -n root -c pscondaenvs pscondaenvs
-
-activate
-
-# Update conda, and install conda-build (used for building in non-root env)
-conda update -q conda
+conda activate
 
 # Create new project environment
 conda env create -n microdrop-exe --file environment.yaml
 if ($LASTEXITCODE) { throw "Failed to create build Conda environment." }
 
-# XXX Work around activation issue by explicitly setting Conda environment
-# variables and updating path.
-$env:CONDA_DEFAULT_ENV = "microdrop-exe"
-$env:CONDA_PREFIX="$env:MINICONDA\envs\microdrop-exe"
-$env:PATH = "$env:CONDA_PREFIX;$env:CONDA_PREFIX\Library\bin;$env:CONDA_PREFIX\bin;$env:CONDA_PREFIX\Scripts;$env:PATH"
-
+conda activate microdrop-exe
 conda info --envs
 
 conda install 7za -y -c conda-forge
