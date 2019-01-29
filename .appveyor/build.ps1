@@ -10,7 +10,7 @@ $buildTag = $prevTag + "+" + $(Get-Date -Format FileDateTime)
 Write-Host "Build Tag: $buildTag"
 Update-AppveyorBuild -Version $buildTag
 
-activate.ps1 $env:APPVEYOR_PROJECT_NAME
+conda activate $env:APPVEYOR_PROJECT_NAME
 
 # Link all available plugins to enabled directory
 python -m mpm.bin.api enable $(dir $env:CONDA_PREFIX\share\microdrop\plugins\available)
