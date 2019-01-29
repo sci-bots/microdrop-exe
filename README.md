@@ -15,7 +15,7 @@ In a Windows 32-bit Python 2.7 Conda Powershell environment (using [Conda 4.6
 or later][conda4.6]) run:
 
 ```sh
-conda env create --file environment-template.yaml
+conda env create --file environment.yaml
 conda activate microdrop-exe
 # Link all available plugins to enabled directory
 python -m mpm.bin.api enable $(dir $env:CONDA_PREFIX\share\microdrop\plugins\available)
