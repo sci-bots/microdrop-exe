@@ -25,17 +25,11 @@ conda update -q conda
 conda env create -n microdrop-exe --file environment.yaml
 if ($LASTEXITCODE) { throw "Failed to create build Conda environment." }
 
-conda info --envs
-
-conda.exe '..checkenv' cmd.exe microdrop-exe
-
-if (-not $?) {
-  $blockRdp = $true
-  iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
-  exit
-}
-
-activate microdrop-exe
+# XXX Work around activation issue by explicitly setting Conda environment
+# variables and updating path.
+$env:CONDA_DEFAULT_ENV = "microdrop-exe"
+$env:CONDA_PREFIX="$env:MINICONDA\envs\microdrop-exe"
+$env:PATH = "$env:CONDA_PREFIX;$env:CONDA_PREFIX\Library\bin;$env:CONDA_PREFIX\bin;$env:CONDA_PREFIX\Scripts;$env:PATH"
 
 conda info --envs
 
