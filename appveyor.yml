@@ -17,6 +17,8 @@ init:
     $env:PATH = $env:MINICONDA + "\Scripts;" + $env:PATH;
 
     Write-Host $env:PATH
+
+    conda init powershell
 environment:
   anaconda_token:
     secure: ZpLQ+IMirVuHrEkZPevDFTZ4AeUuDtLm5d4KTCwgI5oIB5eJxP5OLDYFKwud7K89
