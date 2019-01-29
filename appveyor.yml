@@ -17,6 +17,15 @@ init:
     $env:PATH = $env:MINICONDA + "\Scripts;" + $env:PATH;
 
     Write-Host $env:PATH
+
+    # Configure Conda to operate without user input
+    conda config --set always_yes yes --set changeps1 no
+
+    # Update conda, and install conda-build (used for building in non-root env)
+
+    conda update -q conda
+
+    conda init powershell
 environment:
   anaconda_token:
     secure: ZpLQ+IMirVuHrEkZPevDFTZ4AeUuDtLm5d4KTCwgI5oIB5eJxP5OLDYFKwud7K89
