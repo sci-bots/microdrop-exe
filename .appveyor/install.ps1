@@ -16,6 +16,8 @@ if ($env:CONDA_EXTRA_CHANNELS) {
 # Use PSCondaEnvs to allow activation using powershell:
 conda install -n root -c pscondaenvs pscondaenvs
 
+activate
+
 # Update conda, and install conda-build (used for building in non-root env)
 conda update -q conda
 
@@ -25,7 +27,6 @@ if ($LASTEXITCODE) { throw "Failed to create build Conda environment." }
 
 conda info --envs
 
-activate
 activate microdrop-exe
 
 conda info --envs
