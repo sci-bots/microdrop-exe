@@ -23,7 +23,14 @@ conda update -q conda
 conda env create --name $env:APPVEYOR_PROJECT_NAME --file environment.yaml
 if ($LASTEXITCODE) { throw "Failed to create build Conda environment." }
 
-activate.ps1 $env:APPVEYOR_PROJECT_NAME
+# XXX Work around activation issue by explicitly setting Conda environment
+# variables and updating path.
+$env:CONDA_DEFAULT_ENV = "$env:APPVEYOR_PROJECT_NAME"
+$env:CONDA_PREFIX="$env:MINICONDA\envs\$env:APPVEYOR_PROJECT_NAME"
+$env:PATH = "$env:CONDA_PREFIX;$env:CONDA_PREFIX\Library\bin;$env:CONDA_PREFIX\bin;$env:CONDA_PREFIX\Scripts;$env:PATH"
+
+conda info --envs
+
 conda install 7za -y -c conda-forge
 
 # Download 7zip installer and extract _self-extracting (SFX)_ plugins.
