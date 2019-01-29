@@ -11,11 +11,12 @@ This project defines a [`py2exe`][py2exe] configuration for packaging MicroDrop
 
 # Build
 
-In a Windows 32-bit Python 2.7 Conda Powershell environment run:
+In a Windows 32-bit Python 2.7 Conda Powershell environment (using [Conda 4.6
+or later][conda4.6]) run:
 
 ```sh
 conda env create --file environment-template.yaml
-activate microdrop-exe
+conda activate microdrop-exe
 # Link all available plugins to enabled directory
 python -m mpm.bin.api enable $(dir $env:CONDA_PREFIX\share\microdrop\plugins\available)
 
@@ -52,3 +53,4 @@ Note that this may also be done by running `post-install.bat` in the generated
 
 
 [py2exe]: http://www.py2exe.org
+[conda4.6]: https://www.anaconda.com/blog/developer-blog/conda-4-6-release/
