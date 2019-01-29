@@ -4,6 +4,15 @@
   
 [![Build history](https://buildstats.info/appveyor/chart/SciBots/microdrop-exe)](https://ci.appveyor.com/project/SciBots/microdrop-exe/history)
 
+
+<!-- vim-markdown-toc GFM -->
+
+* [Build](#build)
+    * [Configuring Conda for Powershell](#configuring-conda-for-powershell)
+* [Develop](#develop)
+
+<!-- vim-markdown-toc -->
+
 ------------------------------------------------------------------------
 
 This project defines a [`py2exe`][py2exe] configuration for packaging MicroDrop
@@ -11,11 +20,12 @@ This project defines a [`py2exe`][py2exe] configuration for packaging MicroDrop
 
 # Build
 
-In a Windows 32-bit Python 2.7 Conda Powershell environment run:
+In a Windows 32-bit Python 2.7 Conda Powershell environment (see
+[below](#configuring-conda-for-powershell)) run:
 
 ```sh
-conda env create --file environment-template.yaml
-activate microdrop-exe
+conda env create --file environment.yaml
+conda activate microdrop-exe
 # Link all available plugins to enabled directory
 python -m mpm.bin.api enable $(dir $env:CONDA_PREFIX\share\microdrop\plugins\available)
 
@@ -38,6 +48,23 @@ This will create a `dist` output directory containing the following files:
 | `README.md`             | **Usage instructions**                           |
 | `runpy.exe`             | Run Python module. Equivalent to `python -m ...` |
 
+## Configuring Conda for Powershell
+
+Conda 4.6 introduced [official support for Powershell console
+environments][conda-4.6]. To enable Powershell support, execute the following
+from within an existing Conda environment:
+
+```sh
+# Modify default Powershell profile to add Conda support
+conda init powershell
+```
+
+The next time you launch a Powershell console, the base (i.e. `root`) Conda
+environment will be activated automatically.  Other environments may then be
+activated using `conda activate <environment name>`.
+
+[conda-4.6]: https://www.anaconda.com/blog/developer-blog/conda-4-6-release/
+
 # Develop
 
 To test a built MicroDrop executable distribution, it may be helpful to **enable
@@ -52,3 +79,4 @@ Note that this may also be done by running `post-install.bat` in the generated
 
 
 [py2exe]: http://www.py2exe.org
+[conda4.6]: https://www.anaconda.com/blog/developer-blog/conda-4-6-release/
