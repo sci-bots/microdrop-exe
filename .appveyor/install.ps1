@@ -27,6 +27,14 @@ if ($LASTEXITCODE) { throw "Failed to create build Conda environment." }
 
 conda info --envs
 
+conda.exe '..checkenv' cmd.exe microdrop-exe
+
+if (-not $?) {
+  $blockRdp = $true
+  iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+  exit
+}
+
 activate microdrop-exe
 
 conda info --envs
