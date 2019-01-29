@@ -14,7 +14,7 @@ init:
 
     $env:PATH = $env:MINICONDA + ";" + $env:PATH;
 
-    $env:PATH = $env:MINICONDA + "\\Scripts;" + $env:PATH;
+    $env:PATH = $env:MINICONDA + "\Scripts;" + $env:PATH;
 
     Write-Host $env:PATH
 environment:
