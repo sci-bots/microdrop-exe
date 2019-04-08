@@ -33,6 +33,18 @@ python -m mpm.bin.api enable $(dir $env:CONDA_PREFIX\share\microdrop\plugins\ava
 python .\setup.py py2exe 2>&1 | Tee-Object -FilePath py2exe-build.log
 ```
 
+Or, in a Windows 32-bit Python 2.7 Conda `cmd.exe` environment run:
+
+```sh
+conda env create --file environment.yaml
+conda activate microdrop-exe
+# Link all available plugins to enabled directory
+for /f "usebackq delims=|" %f in (`dir /b "%CONDA_PREFIX%\share\microdrop\plugins\available"`) do python -m mpm.bin.api enable %f
+
+# Build packaged MicroDrop Windows executable application.
+python .\setup.py py2exe
+```
+
 This will create a `dist` output directory containing the following files:
 
 | Name                    | Description                                      |
@@ -72,6 +84,12 @@ all available plugins by default**:
 
 ```sh
 dir $env:CONDA_PREFIX\share\microdrop\plugins\available | % { microdrop-config edit --append plugins.enabled $_.Name }
+```
+
+Or in a `cmd.exe` shell:
+
+```sh
+for /f "usebackq delims=|" %f in (`dir /b "%CONDA_PREFIX%\share\microdrop\plugins\available"`) do microdrop-config edit --append plugins.enabled %f
 ```
 
 Note that this may also be done by running `post-install.bat` in the generated
