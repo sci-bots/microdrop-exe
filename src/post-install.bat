@@ -1,9 +1,5 @@
 REM chore(plugins): enable all plugins by default
-%~dp0\microdrop-config edit --append plugins.enabled droplet_planning_plugin
-%~dp0\microdrop-config edit --append plugins.enabled dmf_device_ui_plugin
-%~dp0\microdrop-config edit --append plugins.enabled dropbot_plugin
-%~dp0\microdrop-config edit --append plugins.enabled user_prompt_plugin
-%~dp0\microdrop-config edit --append plugins.enabled step_label_plugin
+for /f "usebackq delims=|" %f in (`dir /b "%~dp0\etc\microdrop\plugins\enabled"`) do %~dp0\microdrop-config edit --append plugins.enabled %f
 REM perf(logging): set log level to `info` to reduce logging overhead
 %~dp0\microdrop-config edit --set microdrop\.app.log_level info
 REM chore(device-ui): hide connections layer by default
