@@ -2,10 +2,10 @@ Set-PSDebug -Trace 1
 Set-ExecutionPolicy RemoteSigned
 
 Write-Host "Configure Conda to operate without user input"
-$env:MINICONDA\Scripts\conda.exe config --set always_yes yes --set changeps1 no
+& $env:MINICONDA\Scripts\conda.exe config --set always_yes yes --set changeps1 no
 
 Write-Host "Update conda"
-$env:MINICONDA\Scripts\conda.exe install -q "conda>=4.6.11"
+& $env:MINICONDA\Scripts\conda.exe install -q "conda>=4.6.11"
 
 Write-Host "Initialize Conda Powershell support and activate base environment."
 (& $env:MINICONDA\Scripts\conda.exe "shell.powershell" "hook") | Out-String | Invoke-Expression
