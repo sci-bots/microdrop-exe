@@ -8,14 +8,6 @@ init:
     # Requires MINICONDA and PROJECT_NAME environment variables
 
     Write-Host $env:PYTHON_VERSION $env:MINICONDA
-
-
-    # Add Conda to path
-
-    $env:PATH = $env:MINICONDA + ";" + $env:PATH;
-
-    $env:PATH = $env:MINICONDA + "\Scripts;" + $env:PATH;
-
     Write-Host $env:PATH
 environment:
   anaconda_token:
