@@ -12,11 +12,15 @@ Update-AppveyorBuild -Version $buildTag
 
 conda activate $env:APPVEYOR_PROJECT_NAME
 
+$plugins_dir = "$env:CONDA_PREFIX\share\microdrop\plugins\available"
+
 # Link all available plugins to enabled directory
-python -m mpm.bin.api enable $(dir $env:CONDA_PREFIX\share\microdrop\plugins\available)
+if (-Not $(Test-Path "$plugins_dir")) { throw "Plugins directory ``$plugins_dir`` not found." }
+python -m mpm.bin.api enable $(dir "$plugins_dir")
 
 # Build packaged MicroDrop Windows executable application.
 python .\setup.py py2exe
+if (-Not $(Test-Path .\dist\MicroDrop.exe )) { throw "Build output ``dist\MicroDrop.exe`` not found." }
 
 # Rename `dist` directory to `microdrop-<version>`.
 $dist_dir = "microdrop-$($x.Substring(1))"
