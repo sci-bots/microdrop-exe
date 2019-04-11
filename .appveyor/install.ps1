@@ -1,21 +1,14 @@
 Set-PSDebug -Trace 1
 Set-ExecutionPolicy RemoteSigned
 
-# Configure Conda to operate without user input
-conda config --set always_yes yes --set changeps1 no
+Write-Host "Configure Conda to operate without user input"
+$env:MINICONDA\Scripts\conda.exe config --set always_yes yes --set changeps1 no
 
-# Update conda, and install conda-build (used for building in non-root env)
-conda update -q conda
+Write-Host "Update conda"
+$env:MINICONDA\Scripts\conda.exe install -q "conda>=4.6.11"
 
-# Initialize Conda Powershell support.
-conda init powershell
-# Reload Powershell profile (simulates restart of shell after init).
-foreach ($p in "~\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1", "~\Documents\WindowsPowerShell\profile.ps1", "~\Documents\PowerShell\profile.ps1") {
-    if (Test-Path $p) {
-        echo "Reload ``$p``";
-        & $(Resolve-Path $p)
-    }
-}
+Write-Host "Initialize Conda Powershell support and activate base environment."
+(& $env:MINICONDA\Scripts\conda.exe "shell.powershell" "hook") | Out-String | Invoke-Expression
 
 # Allow extra Conda channels to be added (e.g., for testing).
 if ($env:CONDA_EXTRA_CHANNELS) {
@@ -24,8 +17,6 @@ if ($env:CONDA_EXTRA_CHANNELS) {
         conda config --add channels $_
     }
 }
-
-conda activate
 
 # Create new project environment
 conda env create -n $env:APPVEYOR_PROJECT_NAME --file environment.yaml
