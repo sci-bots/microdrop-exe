@@ -10,7 +10,12 @@ conda update -q conda
 # Initialize Conda Powershell support.
 conda init powershell
 # Reload Powershell profile (simulates restart of shell after init).
-~\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
+foreach ($p in "~\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1", "~\Documents\WindowsPowerShell\profile.ps1", "~\Documents\PowerShell\profile.ps1") {
+    if (Test-Path $p) {
+        echo "Reload ``$p``";
+        & $(Resolve-Path $p)
+    }
+}
 
 # Allow extra Conda channels to be added (e.g., for testing).
 if ($env:CONDA_EXTRA_CHANNELS) {
