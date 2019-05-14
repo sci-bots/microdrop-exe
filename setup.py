@@ -28,7 +28,7 @@ setup(windows=get_windows_exes(package_specs),
                           'excludes': get_excludes(package_specs),
                           'includes': get_includes(package_specs),
                           'packages': get_packages(package_specs),
-                          'skip_archive': False,
+                          'skip_archive': True,
                           'unbuffered': False}},
       # See http://www.py2exe.org/index.cgi/MatPlotLib
       data_files=matplotlib.get_py2exe_datafiles() +
