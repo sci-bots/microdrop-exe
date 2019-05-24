@@ -215,7 +215,7 @@ dependencies:
   - pywinpty=0.5.2=py27_1
   - pyyaml=3.12=py27_1
   - pyzmq=17.0.0=py27_4
-  - qt=5.6.2=vc9_1
+  - qt=5.6.2=vc9he136c73_12
   - qtconsole=4.3.1=py27_0
   - redirect-io=0.1=0
   - rename-package-files=0.1.post1=0
