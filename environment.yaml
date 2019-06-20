@@ -61,7 +61,7 @@ dependencies:
   - decorator=4.3.0=py_0
   - deepdiff=3.3.0=py_0
   - dmf-control-board-firmware=1.7.4=py27_0
-  - dmf-device-ui=0.15=0
+  - dmf-device-ui=0.13=0
   - docutils=0.14=py27_0
   - dropbot-dev=1.73.2=0
   - dropbot=1.73.2=py_0
