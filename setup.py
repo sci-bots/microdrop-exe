@@ -1,4 +1,5 @@
 from distutils.core import setup
+import sys
 
 import matplotlib
 import path_helpers as ph
@@ -8,6 +9,10 @@ from py2exe_helpers import (conda_collector, get_excludes, get_dll_excludes,
                             get_data_files, group_data_files,
                             get_console_scripts, get_windows_exes,
                             get_includes, get_packages, fix_init)
+
+# XXX This is required to avoid RuntimeError due to deep recursive call
+# incurred by inclusion of `dmf_control_board_firmware` package.
+sys.setrecursionlimit(sys.getrecursionlimit() * 2)
 
 
 environment_ = yaml.load(open('environment.yaml', 'r'),
@@ -27,7 +32,8 @@ setup(windows=get_windows_exes(package_specs),
                           'dll_excludes': get_dll_excludes(package_specs),
                           'excludes': get_excludes(package_specs),
                           'includes': get_includes(package_specs),
-                          'packages': get_packages(package_specs),
+                          'packages': ['dmf_control_board_firmware', 'scipy',
+                                       'sympy'] + get_packages(package_specs),
                           'skip_archive': False,
                           'unbuffered': False}},
       # See http://www.py2exe.org/index.cgi/MatPlotLib
