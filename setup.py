@@ -25,7 +25,8 @@ setup(windows=get_windows_exes(package_specs),
                           # Insert MICRODROP_PYTHONPATH paths into sys.path
                           'custom_boot_script': 'custom_boot_script.py',
                           'dll_excludes': get_dll_excludes(package_specs),
-                          'excludes': get_excludes(package_specs),
+                          'excludes': get_excludes(package_specs) +
+                          ['asyncio_helpers.async_py3'],
                           'includes': get_includes(package_specs),
                           'packages': get_packages(package_specs),
                           'skip_archive': False,
