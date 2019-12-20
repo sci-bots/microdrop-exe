@@ -4,15 +4,18 @@ import matplotlib
 import path_helpers as ph
 import ruamel.yaml as yaml
 
-from py2exe_helpers import (conda_collector, get_excludes, get_dll_excludes,
-                            get_data_files, group_data_files,
-                            get_console_scripts, get_windows_exes,
-                            get_includes, get_packages, fix_init)
+from py2exe_helpers import (apply_patches, conda_collector, get_excludes,
+                            get_dll_excludes, get_data_files,
+                            group_data_files, get_console_scripts,
+                            get_windows_exes, get_includes, get_packages,
+                            fix_init)
 
 
 environment_ = yaml.load(open('environment.yaml', 'r'),
                          Loader=yaml.loader.Loader)
 package_specs = environment_['dependencies']
+
+apply_patches('patches')
 
 # Create missing `__init__` files.
 fix_init(package_specs)
