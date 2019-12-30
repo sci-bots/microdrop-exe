@@ -30,7 +30,8 @@ setup(windows=get_windows_exes(package_specs),
                           'dll_excludes': get_dll_excludes(package_specs),
                           'excludes': get_excludes(package_specs) +
                           ['asyncio_helpers.async_py3'],
-                          'includes': get_includes(package_specs),
+                          'includes': get_includes(package_specs) +
+                          ['joypad_control_plugin'],
                           'packages': get_packages(package_specs),
                           'skip_archive': False,
                           'unbuffered': False}},
