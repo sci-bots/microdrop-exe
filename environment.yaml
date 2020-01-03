@@ -131,7 +131,7 @@ dependencies:
   - microdrop.joypad-control-plugin=0.1=py_0
   - microdrop.step-label-plugin=2.2.3=0
   - microdrop.user-prompt-plugin=2.4.1=0
-  - microdrop=2.35.0=0
+  - microdrop=3.1.0=0
   - mistune=0.8.3=py_0
   - mkl-service=2.3.0=py27h0b88c2a_0
   - mkl=2019.4=245
