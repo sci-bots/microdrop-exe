@@ -19,6 +19,7 @@ dependencies:
   - microdrop.droplet-planning-plugin
   - microdrop.step-label-plugin
   - microdrop.user-prompt-plugin
+  - microdrop.joypad-control-plugin
   - microdrop-plugin-manager
   - cycler=0.10=1  # See https://github.com/sci-bots/cycler-recipe
   - py2exe=0.6.9=py27
