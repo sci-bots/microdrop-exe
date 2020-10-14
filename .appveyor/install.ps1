@@ -25,7 +25,7 @@ if ($LASTEXITCODE) { throw "Failed to create build Conda environment." }
 conda activate $env:APPVEYOR_PROJECT_NAME
 conda info --envs
 
-conda install 7za -y -c conda-forge -c anaconda
+conda install 7za -y -c sci-bots -c conda-forge -c anaconda
 
 # Download 7zip installer and extract _self-extracting (SFX)_ plugins.
 cmd /C curl -L --output 7zip-installer.exe https://www.7-zip.org/a/7z1805.exe
