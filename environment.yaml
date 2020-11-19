@@ -32,8 +32,8 @@ dependencies:
   - backports_abc=0.5=py_1
   - base-node=0.14=py_0
   - base-node-dev=0.14=0
-  - base-node-rpc=0.51.7=0
-  - base-node-rpc-dev=0.51.7=0
+  - base-node-rpc=0.51.8=0
+  - base-node-rpc-dev=0.51.8=0
   - beautifulsoup4=4.6.0=py27_0
   - blas=1.0=mkl
   - bleach=3.2.1=pyh9f0ad1d_0
