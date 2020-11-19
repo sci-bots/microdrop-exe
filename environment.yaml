@@ -16,24 +16,24 @@ dependencies:
   - arduino-helpers=0.7=py27_0
   - arduino-linked-list=1.2.3=5
   - arduino-memory=1.4=0
-  - arduino-rpc-dev=1.16=0
   - arduino-rpc=1.16=py_0
+  - arduino-rpc-dev=1.16=0
   - arduino-slow-soft-i2c-master=1.0.1=4
   - arduino-slow-soft-wire=1.0.1=6
   - arrow=0.12.1=py27_1
   - asn1crypto=1.4.0=pyh9f0ad1d_0
   - asyncio-helpers=0.2.1=0
   - asyncserial=0.2.3=py_0+git8b4b71e
-  - babel=2.8.0=py_0
-  - backports_abc=0.5=py_1
+  - babel=2.9.0=pyhd3deb0d_0
+  - backports=1.0=py_2
   - backports.functools_lru_cache=1.6.1=py_0
   - backports.shutil_get_terminal_size=1.0.0=py_3
   - backports.shutil_which=3.5.2=py_0
-  - backports=1.0=py_2
-  - base-node-dev=0.14=0
-  - base-node-rpc-dev=0.51.7=0
-  - base-node-rpc=0.51.7=0
+  - backports_abc=0.5=py_1
   - base-node=0.14=py_0
+  - base-node-dev=0.14=0
+  - base-node-rpc=0.51.7=0
+  - base-node-rpc-dev=0.51.7=0
   - beautifulsoup4=4.6.0=py27_0
   - blas=1.0=mkl
   - bleach=3.2.1=pyh9f0ad1d_0
@@ -48,12 +48,12 @@ dependencies:
   - certifi=2018.4.16=py27_0
   - cffi=1.11.5=py27_0
   - chardet=3.0.4=py27_2
+  - clang=5.0.0=2
   - clang-helpers=0.9=py_0
   - clang-libcxx=5.0.0=0
-  - clang=5.0.0=2
   - click=5.1.0=py_0
   - cogapp=2.5.1=py27_0
-  - colorama=0.4.3=py_0
+  - colorama=0.4.4=pyh9f0ad1d_0
   - conda-helpers=0.21=0
   - conda-wrappers=1.0.3=py27_0
   - configobj=4.7.2=py_0
@@ -66,8 +66,8 @@ dependencies:
   - defusedxml=0.6.0=py_0
   - dmf-device-ui=0.15=0
   - docutils=0.14=py27_0
-  - dropbot-dev=1.73.5=0
-  - dropbot=1.73.5=py_0
+  - dropbot=1.73.6=py_0
+  - dropbot-dev=1.73.6=0
   - droplet-planning=0.2.post1=0
   - entrypoints=0.2.3=py27_1
   - enum34=1.1.6=py27_1
@@ -80,8 +80,8 @@ dependencies:
   - future=0.16.0=py27_0
   - futures=3.2.0=py27_0
   - geo_util=0.3=0
-  - git_helpers=0.2=0
   - git=2.14.2=3
+  - git_helpers=0.2=0
   - gitdb2=2.0.6=py_0
   - gitpython=2.1.11=py_0
   - hdf5=1.10.1=vc9_2
@@ -94,9 +94,9 @@ dependencies:
   - intel-openmp=2019.4=245
   - ipaddress=1.0.23=py_0
   - ipykernel=4.8.2=py27_0
-  - ipython_genutils=0.2.0=py_1
   - ipython=5.6.0=py27_0
-  - ipywidgets=7.2.1=py27_1
+  - ipython_genutils=0.2.0=py_1
+  - ipywidgets=7.5.1=pyh9f0ad1d_1
   - jdcal=1.4.1=py_0
   - jinja2=2.11.2=pyh9f0ad1d_0
   - joblib=0.14.1=pyh9f0ad1d_0
@@ -104,11 +104,11 @@ dependencies:
   - json-tricks=3.11.3=py_0
   - jsonpickle=1.4.1=pyh9f0ad1d_0
   - jsonschema=2.6.0=py27_1
+  - jupyter=1.0.0=py_2
+  - jupyter-helpers=0.11=py_0
   - jupyter_client=5.3.3=py_0
   - jupyter_console=5.2.0=py27_0
   - jupyter_core=4.5.0=py_0
-  - jupyter-helpers=0.11=py_0
-  - jupyter=1.0.0=py_2
   - libpng=1.6.34=vc9_0
   - libprotobuf=3.5.2=vc9_0
   - libsodium=1.0.16=vc9_0
@@ -116,55 +116,53 @@ dependencies:
   - logging-helpers=0.4=py_0
   - lxml=4.1.1.post1=0
   - m2w64-gcc-libgfortran=5.3.0=6
-  - m2w64-gcc-libs-core=5.3.0=7
   - m2w64-gcc-libs=5.3.0=7
+  - m2w64-gcc-libs-core=5.3.0=7
   - m2w64-gmp=6.1.0=2
   - m2w64-libwinpthread-git=5.0.0.4634.697f757=2
   - markdown2pango=0.1=0
   - markupsafe=1.0=py27_0
   - matplotlib=2.1.2=py27_2
+  - microdrop=3.1.2=0
   - microdrop-device-converter=0.1.post5=0
   - microdrop-plugin-manager=0.26.0=0
   - microdrop-plugin-template=1.3=0
-  - microdrop-utility==0.4.post2
   - microdrop.dmf-device-ui-plugin=2.12=0
-  - microdrop.dropbot-plugin=2.39.0=0
+  - microdrop.dropbot-plugin=2.39.2=0
   - microdrop.droplet-planning-plugin=2.6.2=0
   - microdrop.joypad-control-plugin=0.1=py_0
   - microdrop.step-label-plugin=2.2.3=0
   - microdrop.user-prompt-plugin=2.4.1=0
-  - microdrop=3.1.1=0
   - mistune=0.8.3=py_0
-  - mkl_fft=1.0.9=py27_0
-  - mkl-service=2.3.0=py27h0b88c2a_0
   - mkl=2019.4=245
+  - mkl-service=2.3.0=py27h0b88c2a_0
+  - mkl_fft=1.0.9=py27_0
   - mpmath=1.1.0=py_0
   - mqtt-messages-python=0.2=py_0
   - msys2-conda-epoch=20160418=1
-  - nadamq-dev=0.19.3=0
   - nadamq=0.19.3=py27_0
-  - nanopb-helpers-dev=0.12=0
-  - nanopb-helpers=0.12=py_0
+  - nadamq-dev=0.19.3=0
   - nanopb=0.3.7=8
+  - nanopb-helpers=0.12=py_0
+  - nanopb-helpers-dev=0.12=0
   - natsort=6.2.0=py_0
   - nbconvert=5.6.0=py_0
   - nbformat=4.4.0=py_1
   - networkx=2.2=py_1
   - notebook=5.4.1=py27_0
-  - ntfsutils==0.1.3.post2
   - numexpr=2.6.4=py27_1
-  - numpy-base=1.16.6=py27hb1d0314_0
   - numpy=1.16.6=py27hcd21bde_0
+  - numpy-base=1.16.6=py27hb1d0314_0
   - onoff=1.0.1=py_0
   - opencv-helpers=0.1.post1=0
   - openpyxl=2.6.4=py_0
   - openssl=1.0.2o=vc9_0
   - or-event=0.2.1=py_0
   - packaging=20.4=pyh9f0ad1d_0
-  - paho-mqtt-helpers=0.4=py_0
   - paho-mqtt=1.3.1=py_1
-  - pandas-helpers=0.3=py_0
+  - paho-mqtt-helpers=0.4=py_0
   - pandas=0.22.0=py27_0
+  - pandas-helpers=0.3=py_0
   - pandoc=2.1.3=0
   - pandocfilters=1.4.2=py_1
   - path_helpers=0.8=py27_0
@@ -172,8 +170,9 @@ dependencies:
   - paver=1.2.4=py_1
   - pickleshare=0.7.4=py27_0
   - pint=0.9=py_0
-  - pip-helpers=0.6.post3=0
   - pip=20.1.1=pyh9f0ad1d_0
+  - pip-helpers=0.6.post3=0
+  - platformio=3.5.2b2.post20=g42c1c804_0
   - platformio-framework-arduinoavr=1.10620.2=2
   - platformio-helpers=0.10.2=py_0
   - platformio-platform-atmelavr=1.8.1.post1=ge80a6ae0
@@ -182,34 +181,31 @@ dependencies:
   - platformio-tool-scons=3.30001.0=0
   - platformio-tool-teensy=1.141.0=1
   - platformio-toolchain-atmelavr=1.40902.1=0
-  - platformio=3.5.2b2.post20=g42c1c804_0
   - progressbar2=3.53.1=pyh9f0ad1d_0
   - prompt_toolkit=1.0.15=py_1
   - protobuf=3.5.2=py27_vc9_0
   - psutil=5.4.5=py27_0
-  - py2exe-helpers=0.2.7=0
   - py2exe=0.6.9=py27
+  - py2exe-helpers=0.2.7=0
   - pycairo-gtk2=0.1.0=py27_1
   - pycparser=2.20=pyh9f0ad1d_2
-  - pydash=4.8.0=pyh9f0ad1d_0
+  - pydash=4.9.0=pyh9f0ad1d_0
   - pygio2=0.1.0=py27_1
   - pyglib2=0.1.0=py27_1
   - pygments=2.5.2=py_0
-  - pygst_utils=0.3.5=1
   - pygst-0.10=0.1.post2=0
-  - pygtk-textbuffer-with-undo==0.2
+  - pygst_utils=0.3.5=1
   - pygtk2=0.1.0=py27_3
-  - pymunk==4.0.0
   - pyopenssl=17.5.0=py27_1
   - pyparsing=2.4.7=pyh9f0ad1d_0
   - pyqt=5.6.0=py27_5
   - pyserial=3.4=py_2
   - pysocks=1.6.8=py27_1
   - pytables=3.4.4=py27_8
+  - python=2.7.14=5
   - python-clang=5.0.0=py_1
   - python-dateutil=2.8.1=py_0
   - python-utils=2.4.0=py_0
-  - python=2.7.14=5
   - pytz=2020.1=pyh9f0ad1d_0
   - pyutilib.component.config=3.8=0
   - pyutilib.component.core=4.6.4=0
@@ -221,12 +217,10 @@ dependencies:
   - qt=5.6.2=vc9he136c73_12
   - qtconsole=4.7.7=pyh9f0ad1d_0
   - qtpy=1.9.0=py_0
-  - redirect-io==0.1
   - rename-package-files=0.1.post1=0
-  - requests=2.24.0=pyh9f0ad1d_0
+  - requests=2.25.0=pyhd3deb0d_0
   - ruamel.ordereddict=0.4.13=py27_0
   - ruamel.yaml=0.15.37=py27_0
-  - run-exe==0.5.post2
   - scandir=1.7=py27_0
   - scipy=1.2.1=py27h4c3ab11_0
   - semantic_version=2.8.5=pyh9f0ad1d_0
@@ -249,16 +243,15 @@ dependencies:
   - svgwrite=1.1.8=0
   - sympy=1.1.1=py27_0
   - tabulate=0.8.7=pyh9f0ad1d_0
-  - task-scheduler==0.2
-  - teensy-minimal-rpc-dev=0.10=0
   - teensy-minimal-rpc=0.10=py_0
+  - teensy-minimal-rpc-dev=0.10=0
   - terminado=0.8.1=py27_0
   - testpath=0.4.4=py_0
   - tornado=5.0.2=py27_0
   - traitlets=4.3.2=py27_0
   - trollius=2.2=py27_0
   - typing=3.6.4=py27_0
-  - urllib3=1.25.10=py_0
+  - urllib3=1.25.11=py_0
   - vc=9=h7299396_1
   - versioneer=0.18=py_1
   - virtualenv=16.7.5=py_0
@@ -269,7 +262,7 @@ dependencies:
   - wheeler.pygtkhelpers=0.22=0
   - wheezy.routing=0.1.157=py_0
   - whichcraft=0.6.1=py_0
-  - widgetsnbextension=3.2.1=py27_1
+  - widgetsnbextension=3.5.1=pyh9f0ad1d_3
   - win_inet_pton=1.0.1=py27_1
   - win_unicode_console=0.5=py27_0
   - wincertstore=0.2=py27_0
@@ -278,4 +271,3 @@ dependencies:
   - zeromq=4.2.5=vc9_2
   - zlib=1.2.11=vc9_0
   - zmq-plugin=0.4=0
-  
