@@ -1,3 +1,4 @@
+from copy import deepcopy
 from distutils.core import setup
 
 import matplotlib
@@ -8,7 +9,7 @@ from py2exe_helpers import (apply_patches, conda_collector, get_excludes,
                             get_dll_excludes, get_data_files,
                             group_data_files, get_console_scripts,
                             get_windows_exes, get_includes, get_packages,
-                            fix_init)
+                            fix_init, DEFAULT_STATIC_PACKAGES)
 
 
 environment_ = yaml.load(open('environment.yaml', 'r'),
@@ -20,9 +21,12 @@ apply_patches('patches')
 # Create missing `__init__` files.
 fix_init(package_specs)
 
+static_packages = deepcopy(DEFAULT_STATIC_PACKAGES)
+static_packages["pymunk"] = {}
+
 setup(windows=get_windows_exes(package_specs),
       console=get_console_scripts(package_specs),
-      cmdclass={'py2exe': conda_collector(package_specs)},
+      cmdclass={'py2exe': conda_collector(package_specs, static_packages)},
       # See http://www.py2exe.org/index.cgi/ListOfOptions
       options={'py2exe': {'compressed': False,
                           # Insert MICRODROP_PYTHONPATH paths into sys.path
