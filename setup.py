@@ -5,11 +5,21 @@ import matplotlib
 import path_helpers as ph
 import ruamel.yaml as yaml
 
-from py2exe_helpers import (apply_patches, conda_collector, get_excludes,
-                            get_dll_excludes, get_data_files,
-                            group_data_files, get_console_scripts,
-                            get_windows_exes, get_includes, get_packages,
-                            fix_init, DEFAULT_STATIC_PACKAGES)
+from py2exe_helpers import (
+    DEFAULT_INCLUDES,
+    DEFAULT_STATIC_PACKAGES,
+    apply_patches,
+    conda_collector,
+    fix_init,
+    get_console_scripts,
+    get_data_files,
+    get_dll_excludes,
+    get_excludes,
+    get_includes,
+    get_packages,
+    get_windows_exes,
+    group_data_files,
+)
 
 
 environment_ = yaml.load(open('environment.yaml', 'r'),
