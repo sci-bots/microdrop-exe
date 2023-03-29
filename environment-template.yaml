@@ -17,6 +17,7 @@ dependencies:
   - microdrop.dmf-device-ui-plugin
   - microdrop.dropbot-plugin
   - microdrop.droplet-planning-plugin
+  - microdrop.mr-box-plugin
   - microdrop.step-label-plugin
   - microdrop.user-prompt-plugin
   - microdrop.joypad-control-plugin
