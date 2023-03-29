@@ -24,3 +24,4 @@ dependencies:
   - cycler=0.10=1  # See https://github.com/sci-bots/cycler-recipe
   - py2exe=0.6.9=py27
   - py2exe-helpers=0.2.7=0
+  - pydash<5.0
