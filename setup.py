@@ -25,25 +25,35 @@ static_packages = deepcopy(DEFAULT_STATIC_PACKAGES)
 static_packages["mr-box-peripheral-board"] = {"module": "mr_box_peripheral_board"}
 static_packages["pymunk"] = {}
 
-setup(windows=get_windows_exes(package_specs),
-      console=get_console_scripts(package_specs),
-      cmdclass={'py2exe': conda_collector(package_specs, static_packages)},
-      # See http://www.py2exe.org/index.cgi/ListOfOptions
-      options={'py2exe': {'compressed': False,
-                          # Insert MICRODROP_PYTHONPATH paths into sys.path
-                          'custom_boot_script': 'custom_boot_script.py',
-                          'dll_excludes': get_dll_excludes(package_specs),
-                          'excludes': get_excludes(package_specs) +
-                          ['asyncio_helpers.async_py3'],
-                          'includes': get_includes(package_specs) +
-                          ['joypad_control_plugin'],
-                          'packages': get_packages(package_specs),
-                          'skip_archive': False,
-                          'unbuffered': False}},
-      # See http://www.py2exe.org/index.cgi/MatPlotLib
-      data_files=matplotlib.get_py2exe_datafiles() +
-      group_data_files(get_data_files(package_specs)) +
-      # Copy README, custom scripts, etc.
-      group_data_files(sorted([(str(ph.path('src').relpathto(p.parent)),
-                                str(p))
-                               for p in ph.path('src').walkfiles()])))
+setup(
+    windows=get_windows_exes(package_specs),
+    console=get_console_scripts(package_specs),
+    cmdclass={"py2exe": conda_collector(package_specs, static_packages)},
+    # See http://www.py2exe.org/index.cgi/ListOfOptions
+    options={
+        "py2exe": {
+            "compressed": False,
+            # Insert MICRODROP_PYTHONPATH paths into sys.path
+            "custom_boot_script": "custom_boot_script.py",
+            "dll_excludes": get_dll_excludes(package_specs),
+            "excludes": get_excludes(package_specs) + ["asyncio_helpers.async_py3"],
+            "includes": get_includes(package_specs) + ["joypad_control_plugin"],
+            "packages": get_packages(package_specs),
+            "skip_archive": False,
+            "unbuffered": False,
+        }
+    },
+    # See http://www.py2exe.org/index.cgi/MatPlotLib
+    data_files=matplotlib.get_py2exe_datafiles()
+    + group_data_files(get_data_files(package_specs))
+    +
+    # Copy README, custom scripts, etc.
+    group_data_files(
+        sorted(
+            [
+                (str(ph.path("src").relpathto(p.parent)), str(p))
+                for p in ph.path("src").walkfiles()
+            ]
+        )
+    ),
+)
