@@ -22,6 +22,7 @@ apply_patches('patches')
 fix_init(package_specs)
 
 static_packages = deepcopy(DEFAULT_STATIC_PACKAGES)
+static_packages["mr-box-peripheral-board"] = {"module": "mr_box_peripheral_board"}
 static_packages["pymunk"] = {}
 
 setup(windows=get_windows_exes(package_specs),
