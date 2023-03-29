@@ -7,6 +7,7 @@ import ruamel.yaml as yaml
 
 from py2exe_helpers import (
     DEFAULT_INCLUDES,
+    DEFAULT_PACKAGES,
     DEFAULT_STATIC_PACKAGES,
     apply_patches,
     conda_collector,
@@ -30,6 +31,9 @@ apply_patches('patches')
 
 # Create missing `__init__` files.
 fix_init(package_specs)
+
+packages = deepcopy(DEFAULT_PACKAGES)
+packages["mr-box-peripheral-board"] = ["mr_box_peripheral_board"]
 
 static_packages = deepcopy(DEFAULT_STATIC_PACKAGES)
 static_packages["mr-box-peripheral-board"] = {"module": "mr_box_peripheral_board"}
@@ -67,7 +71,7 @@ setup(
                 "conda_helpers._async_py35",
             ],
             "includes": get_includes(package_specs, package_includes),
-            "packages": get_packages(package_specs),
+            "packages": get_packages(package_specs, packages),
             "skip_archive": False,
             "unbuffered": False,
         }
