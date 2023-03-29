@@ -36,7 +36,11 @@ setup(
             # Insert MICRODROP_PYTHONPATH paths into sys.path
             "custom_boot_script": "custom_boot_script.py",
             "dll_excludes": get_dll_excludes(package_specs),
-            "excludes": get_excludes(package_specs) + ["asyncio_helpers.async_py3"],
+            "excludes": get_excludes(package_specs)
+            + [
+                "asyncio_helpers.async_py3",
+                "conda_helpers._async_py35",
+            ],
             "includes": get_includes(package_specs) + ["joypad_control_plugin"],
             "packages": get_packages(package_specs),
             "skip_archive": False,
