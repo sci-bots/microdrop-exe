@@ -35,6 +35,11 @@ static_packages = deepcopy(DEFAULT_STATIC_PACKAGES)
 static_packages["mr-box-peripheral-board"] = {"module": "mr_box_peripheral_board"}
 static_packages["pymunk"] = {}
 
+package_includes = deepcopy(DEFAULT_INCLUDES)
+package_includes["microdrop.joypad-control-plugin"] = [
+      "joypad_control_plugin",
+]
+
 setup(
     windows=get_windows_exes(package_specs),
     console=get_console_scripts(package_specs),
@@ -51,7 +56,7 @@ setup(
                 "asyncio_helpers.async_py3",
                 "conda_helpers._async_py35",
             ],
-            "includes": get_includes(package_specs) + ["joypad_control_plugin"],
+            "includes": get_includes(package_specs, package_includes),
             "packages": get_packages(package_specs),
             "skip_archive": False,
             "unbuffered": False,
