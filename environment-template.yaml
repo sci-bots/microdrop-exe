@@ -4,13 +4,16 @@
 # See `README.md` for more information.
 name: microdrop-exe
 channels:
-  - sci-bots/label/py2exe
-  - sci-bots/label/dropbot
-  - dropbot
-  - sci-bots/label/microdrop-2-plugins
-  - sci-bots/label/microdrop-2
-  - sci-bots
   - conda-forge
+  - sci-bots/label/py2exe
+  - alexsk
+  - sci-bots/label/microdrop-2-plugins
+  - sci-bots/label/dropbot
+  - sci-bots/label/microdrop-2
+  - microdrop-plugins
+  - dropbot
+  - sci-bots
+  - wheeler-microfluidics
   - defaults
 dependencies:
   - microdrop
@@ -22,7 +25,10 @@ dependencies:
   - microdrop.user-prompt-plugin
   - microdrop.joypad-control-plugin
   - microdrop-plugin-manager
-  - cycler=0.10=1  # See https://github.com/sci-bots/cycler-recipe
+  - cycler=0.10=1 # See https://github.com/sci-bots/cycler-recipe
   - py2exe=0.6.9=py27
   - py2exe-helpers>=0.2.8
   - pydash<5.0
+  - mr-box-peripheral-board>=0.31.2
+  - mr-box-peripheral-board-dev>=0.31.2
+  - openpyxl-helpers>=0.6.1
