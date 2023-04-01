@@ -32,13 +32,16 @@ apply_patches('patches')
 # Create missing `__init__` files.
 fix_init(package_specs)
 
+# Recursively include packages including only `*.py` files.
 packages = deepcopy(DEFAULT_PACKAGES)
 packages["mr-box-peripheral-board"] = ["mr_box_peripheral_board"]
 
+# Recursively include all NON-`*.py` files.
 static_packages = deepcopy(DEFAULT_STATIC_PACKAGES)
 static_packages["mr-box-peripheral-board"] = {"module": "mr_box_peripheral_board"}
 static_packages["pymunk"] = {}
 
+# Explicitly add individual (or wildcard) Python module (i.e., `<module>.py`).
 package_includes = deepcopy(DEFAULT_INCLUDES)
 package_includes["microdrop.joypad-control-plugin"] = [
       "joypad_control_plugin",
