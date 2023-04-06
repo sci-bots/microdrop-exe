@@ -39,6 +39,16 @@ package_includes = deepcopy(DEFAULT_INCLUDES)
 package_includes["microdrop.joypad-control-plugin"] = [
       "joypad_control_plugin",
 ]
+package_includes["mr-box-peripheral-board"] = [
+      "openpyxl_helpers",
+      "scipy",
+      "scipy.integrate",
+      "scipy.special.*",
+      "scipy.linalg.*",
+      "scipy._lib.messagestream",
+      "scipy.sparse.csgraph._validation",
+      "scipy.special._ufuncs_cxx",
+]
 
 setup(
     windows=get_windows_exes(package_specs),
